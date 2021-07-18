@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "5b39488c-3958-466b-9a67-63074adaaf0c",
+		"name": "monese",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\"  : \"Josh Account\",\r\n    \"number\"  : \"123121\",\r\n    \"code\"  : \"01-02-56\",\r\n    \"balance\"  : 500.00\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Money Between Accounts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\"  : \"123121\",\r\n    \"accountSortCode\"  : \"01-02-56\",\r\n    \"counterpartyNumber\"  : \"13457245\",\r\n    \"counterpartySortCode\"  : \"09-01-20\",\r\n    \"amount\"  : 99.00\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createTransaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createTransaction"
+					],
+					"query": [
+						{
+							"key": "account_name",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Response Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\"  : \"06554577\",\r\n    \"accountSortCode\"  : \"01-02-56\",\r\n    \"counterpartyNumber\"  : \"13457245\",\r\n    \"counterpartySortCode\"  : \"09-01-20\",\r\n    \"amount\"  : 100.00\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createTransactionResponse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createTransactionResponse"
+					],
+					"query": [
+						{
+							"key": "account_name",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Account Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\"  : \"123121\",\r\n    \"accountCode\"  : \"01-02-56\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account-transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account-transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Transcations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
