@@ -16,7 +16,7 @@ This is a simple banking application to:
 * This can be viewed inside the H2 console but simpler would be to call the endpoints to view all data. 
 * The initial data is created by /resources/data.sql
 
-####Endpoint lists
+#### Endpoint lists
 * /accounts - GET  - lists all accounts
 * /transactions - GET lists all transactions
 * /account-create - POST accepts RAW JSON - creates account
