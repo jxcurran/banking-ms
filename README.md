@@ -10,7 +10,7 @@ This is a simple banking application to:
   This will start a Spring Boot application on localhost:8080 and create a /data directory for the DB
 
 ### As a standalone JAR
-* Taken from target/banking-ms-0.0.1-SNAPSHOT.jar
+* Taken from banking-ms/banking-ms-0.0.1-SNAPSHOT.jar
 * java -jar banking-ms-0.0.1-SNAPSHOT.jar
 * This will start a Spring Boot application on localhost:8080 and create a /data directory with a H2 db with some initial account data. 
 * This can be viewed inside the H2 console but simpler would be to call the endpoints to view all data. 
