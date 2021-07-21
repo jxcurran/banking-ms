@@ -1,7 +1,7 @@
 package com.demo.bankingms.model;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
@@ -18,6 +18,8 @@ public class Account {
     private String code;
     @Column
     private Double balance;
+    @Column
+    private LocalDateTime creation;
 
     public int getId() {
         return id;
@@ -59,11 +61,23 @@ public class Account {
         this.balance = balance;
     }
 
+   public LocalDateTime getCreation() {
+        return creation;
+    }
+
+    public void setCreation(LocalDateTime creation) {
+        this.creation = creation;
+    }
+
     @Override
     public String toString() {
-        return name + ": " +
-                "Account Number='" + number + '\'' +
-                ", Account Code ='" + code + '\'' +
-                ", Account Balance=" + balance;
+        return "Account{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", number='" + number + '\'' +
+                ", code='" + code + '\'' +
+                ", balance=" + balance +
+                ", creationDate=" + creation +
+                '}';
     }
 }

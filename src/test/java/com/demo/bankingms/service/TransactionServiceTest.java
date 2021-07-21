@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Optional;
 
@@ -69,11 +72,13 @@ class TransactionServiceTest {
         account1.setBalance(startingBalance);
         account1.setName("name1");
         account1.setCode("code1");
+        account1.setCreation(LocalDateTime.now().plusYears(1));
         accountService.createOrUpdate(account1);
         account2.setNumber("2");
         account2.setBalance(startingBalance);
         account2.setName("name2");
         account2.setCode("code2");
+        account2.setCreation(LocalDateTime.now().minusYears(1));
         accountService.createOrUpdate(account2);
     }
 
